@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Jugadores:</h1>
+
+    {% if player_list %}
+    <ul>
+
+      {% for player in player_list %}
+      <li>
+        <a href="{{ player.get_absolute_url }}">{{ player.nick }}</a> ({{player.fullname}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No existen jugadores en el equipo.</p>
+    {% endif %}
+{% endblock %}
+~                

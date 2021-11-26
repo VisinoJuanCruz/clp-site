@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>{{ player.nick }}</h1>
+
+<p><strong> Nombre Completo:  </strong><a href="">{{ player.fullname }}</a></p>
+<p><strong> Nacionalidad:  </strong><a href="">{{ player.country }}</a></p>
+<p><strong> Nacimiento:  </strong><a href="">{{ player.birthday }}</a></p>
+<p><strong> Horas jugadas:  </strong><a href="">{{ player.played_hours }}</a></p>
+<p><strong> Rank:  </strong><a href="">{{ player.rank }}</a></p>
+
+{% endblock %}
+
+
+
