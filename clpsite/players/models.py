@@ -23,7 +23,6 @@ class Agent(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this setup')
     name = models.CharField(max_length=20, help_text="Enter a agent name")
     rol = models.ForeignKey('Rol',on_delete=models.SET_NULL, null=True, help_text="Select a rol for this Agent")
-
     def __str__(self):
         return self.name
 
@@ -33,7 +32,8 @@ class Player(Person):
     nick = models.CharField(max_length=25, help_text="Enter a player nick")
     played_hours = models.IntegerField()
     rank = models.ForeignKey('Rank', on_delete=models.SET_NULL, null=True) 
-    agents_pool = models.ManyToManyField(Agent, help_text="Select a agents to make agents_pool")
+    setup = models.ForeignKey('Setup',on_delete=models.SET_NULL, null=True)
+    setting = models.ForeignKey('Setting', on_delete=models.SET_NULL, null=True) 
 
     def __str__(self):
         return self.nick
@@ -58,24 +58,28 @@ class Map(models.Model):
 
 class Setting(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this setting')
+    name= models.CharField(null=True,blank=True, max_length=25, help_text="Enter a setting name")
     sensivility = models.FloatField(help_text="Enter a sens number")
     dpi = models.IntegerField(help_text="Enter a dpi number")
+
+    def __str__(self):
+        return self.name
 
     def get_absolute_url(self):
          return reverse('player-detail',args=[str(self.id)])
 
 
 class Setup(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this setup')
-    monitor = models.CharField(max_length=25, help_text="Enter a monitor name")
-    mouse = models.CharField(max_length=25, help_text="Enter a mouse name")
-    mousepad = models.CharField(max_length=25, help_text="Enter a mousepad name")
-    keyboard = models.CharField(max_length=25, help_text="Enter a keyboard name")
-    headset = models.CharField(max_length=25, help_text="Enter a headset name")
+    id= models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this person')
+    name = models.CharField(null=True,blank=True,max_length=50, help_text="Enter a name for this setup")
+    monitor = models.CharField(max_length=50, help_text="Enter a monitor name")
+    mouse = models.CharField(max_length=50, help_text="Enter a mouse name")
+    mousepad = models.CharField(max_length=50, help_text="Enter a mousepad name")
+    keyboard = models.CharField(max_length=50, help_text="Enter a keyboard name")
+    headset = models.CharField(max_length=50, help_text="Enter a headset name")
 
     def __str__(self):
         return self.name
-
 
 class Rol(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this setup')
