@@ -4,13 +4,15 @@ from django.views import generic
 def index(request):
     """ Funcion vista para la pagina de inicio del sitio"""
     num_players = Player.objects.all().count()
-    
-
+    num_maps = Map.objects.all().count() 
+    num_agents = Agent.objects.all().count()
 
     return render(
             request,
             'index.html',
-            context={'num_players':num_players},)
+            context={'num_players':num_players,
+            'num_maps':num_maps,
+            'num_agents':num_agents})
    
 class PlayerListView(generic.ListView):
     model = Player
