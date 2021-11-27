@@ -4,9 +4,33 @@
 
 <h1>{{ player.nick }}</h1>
 
-{% for name_field, value_field in player.get_fields %}
-	{% if name_field != "id" and value_field != "None" %}
-		<p><strong>{{ name_field|title }} : </strong> {{ value_field }}</p>
-	{% endif %}
-{% endfor %}
+<p><strong> Nombre Completo:  </strong> {{player.fullname }}</p>
+<p><strong> Nacionalidad:  </strong>{{ player.country }}</p>
+<p><strong> Nacimiento:  </strong>{{ player.birthday }}</p>
+<p><strong> Horas jugadas:  </strong>{{ player.played_hours }}</p>
+<p><strong> Rank:  </strong>{{ player.rank }}</p>
+
+{% if not player.sensivility is None %}
+        <p><strong> Sensivility:  </strong>{{player.sensivility}}</p>
+{% endif %}
+{% if not player.dpi is None %}
+        <p><strong> Dpi</strong>{{player.dpi}}</p>
+{% endif %}
+{% if not player.monitor is None %}
+        <p><strong> Monitor</strong>{{player.monitor}}</p>
+{% endif %}
+{% if not player.mouse is None %}
+        <p><strong> Mouse</strong>{{player.mouse}}</p>
+{% endif %}
+{% if not player.mousepad is None %}
+        <p><strong> Mousepad</strong>{{player.mousepad}}</p>
+{% endif %}
+{% if not player.keyboard is None %}
+        <p><strong> Keyboard</strong>{{player.keyboard}}</p>
+{% endif %}
+{% if not player.headset is None %}
+        <p><strong> Headset</strong>{{player.headset}}</p>
+{% endif %}
 {% endblock %}
+
+
