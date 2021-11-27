@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from .models import Player, Country, Rank, Person
+from .models import Player, Country, Rank, Person, Agent, Map,Rol
 from django.views import generic
 def index(request):
     """ Funcion vista para la pagina de inicio del sitio"""
     num_players = Player.objects.all().count()
+    
+
 
     return render(
             request,
