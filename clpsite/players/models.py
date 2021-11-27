@@ -43,6 +43,9 @@ class Player(Person):
     keyboard = models.CharField(max_length=50, help_text="Enter a keyboard name",blank= True, null=True)
     headset = models.CharField(max_length=50, help_text="Enter a headset name",blank= True, null=True)
 
+    def get_fields(self):
+        return [(field.name, field.value_to_string(self)) for field in Player._meta.fields]
+
 
     def __str__(self):
         return self.nick
