@@ -23,9 +23,12 @@ class Agent(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this setup')
     name = models.CharField(max_length=20, help_text="Enter a agent name")
     rol = models.ForeignKey('Rol',on_delete=models.SET_NULL, null=True, help_text="Select a rol for this Agent")
+    
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('agent-detail',args=[str(self.id)])
 
 
 class Player(Person):
@@ -42,6 +45,8 @@ class Player(Person):
     mousepad = models.CharField(max_length=50, help_text="Enter a mousepad name",blank= True, null=True)
     keyboard = models.CharField(max_length=50, help_text="Enter a keyboard name",blank= True, null=True)
     headset = models.CharField(max_length=50, help_text="Enter a headset name",blank= True, null=True)
+    
+
 
     def get_fields(self):
         return [(field.name, field.value_to_string(self)) for field in Player._meta.fields]
@@ -66,7 +71,9 @@ class Map(models.Model):
 
     def __str__(self):
         return self.name
-
+    
+    def get_absolute_url(self):
+        return reverse('map-detail',args=[str(self.id)])
 
 class Rol(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this setup')

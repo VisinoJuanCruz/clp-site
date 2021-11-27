@@ -1,0 +1,16 @@
+{% extends "base_generic.html"%}
+
+{% block content %}
+        <h1>Mapas: </h1>
+
+        {% if map_list %}
+        <ul>
+                {% for map in map_list %}
+                <li>
+                        <a href="{{map.get_absolute_url}}">{{ map.name }}</a>
+                </li>
+                {% endfor %}
+        </ul>
+        {% endif %} 
+{% endblock %}
+

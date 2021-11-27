@@ -19,3 +19,15 @@ class PlayerListView(generic.ListView):
 
 class PlayerDetailView(generic.DetailView):
     model = Player
+
+class MapListView(generic.ListView):
+    model = Map
+
+class MapDetailView(generic.DetailView):
+    model = Map
+
+class AgentListView(generic.ListView):
+    model = Agent
+
+class AgentDetailView(generic.DetailView):
+    model = Agent

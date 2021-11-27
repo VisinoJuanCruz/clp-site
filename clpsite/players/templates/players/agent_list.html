@@ -1,0 +1,16 @@
+{% extends "base_generic.html"%}
+
+{% block content %}
+        <h1>Agentes: </h1>
+
+        {% if agent_list %}
+        <ul>
+                {% for agent in agent_list %}
+                <li>
+                        <a href="{{agent.get_absolute_url}}">{{ agent.name }}</a>
+                </li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+{% endblock %}
+
