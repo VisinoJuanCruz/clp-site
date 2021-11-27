@@ -10,26 +10,33 @@
 <p><strong> Horas jugadas:  </strong>{{ player.played_hours }}</p>
 <p><strong> Rank:  </strong>{{ player.rank }}</p>
 
+<p><strong> Pool de agentes: </strong></p>
+	<ul>	
+	{% for agent in player.agents.values %}
+	<li>{{agent.name}}</li>	
+	{% endfor %}			
+	</ul>
+
 {% if not player.sensivility is None %}
         <p><strong> Sensivility:  </strong>{{player.sensivility}}</p>
 {% endif %}
 {% if not player.dpi is None %}
-        <p><strong> Dpi</strong>{{player.dpi}}</p>
+        <p><strong> Dpi:  </strong>{{player.dpi}}</p>
 {% endif %}
 {% if not player.monitor is None %}
-        <p><strong> Monitor</strong>{{player.monitor}}</p>
+        <p><strong> Monitor:  </strong>{{player.monitor}}</p>
 {% endif %}
 {% if not player.mouse is None %}
-        <p><strong> Mouse</strong>{{player.mouse}}</p>
+        <p><strong> Mouse:  </strong>{{player.mouse}}</p>
 {% endif %}
 {% if not player.mousepad is None %}
-        <p><strong> Mousepad</strong>{{player.mousepad}}</p>
+        <p><strong> Mousepad:  </strong>{{player.mousepad}}</p>
 {% endif %}
 {% if not player.keyboard is None %}
-        <p><strong> Keyboard</strong>{{player.keyboard}}</p>
+        <p><strong> Keyboard:  </strong>{{player.keyboard}}</p>
 {% endif %}
 {% if not player.headset is None %}
-        <p><strong> Headset</strong>{{player.headset}}</p>
+        <p><strong> Headset:  </strong>{{player.headset}}</p>
 {% endif %}
 {% endblock %}
 
