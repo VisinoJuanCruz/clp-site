@@ -32,8 +32,8 @@ class Player(Person):
     nick = models.CharField(max_length=25, help_text="Enter a player nick")
     played_hours = models.IntegerField()
     rank = models.ForeignKey('Rank', on_delete=models.SET_NULL, null=True) 
-    setup = models.ForeignKey('Setup',on_delete=models.SET_NULL, null=True)
-    setting = models.ForeignKey('Setting', on_delete=models.SET_NULL, null=True) 
+    setup = models.ForeignKey('Setup',on_delete=models.SET_NULL, null=True,blank=True)
+    setting = models.ForeignKey('Setting', on_delete=models.SET_NULL, null=True,blank=True) 
 
     def __str__(self):
         return self.nick
