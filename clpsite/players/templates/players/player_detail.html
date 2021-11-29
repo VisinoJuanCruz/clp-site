@@ -13,7 +13,7 @@
 <p><strong> Pool de agentes: </strong></p>
 	<ul>	
 	{% for agent in player.agents.values %}
-	<li><a href="{{ agent.get_absolute.url}} ">{{agent.name}}</a></li>	
+		<li><a href={{ player.agents.agent.get_absolute_url }}>{{agent.name}}</a></li>	
 	{% endfor %}			
 	</ul>
 
