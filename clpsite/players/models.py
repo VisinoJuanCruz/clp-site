@@ -68,6 +68,13 @@ class Rank(models.Model):
 class Map(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this map')
     name = models.CharField(max_length=20, help_text="Enter a map name")
+    image = models.ImageField(upload_to = 'players', blank=True)
+    minimapa = models.ImageField(upload_to = 'players', blank=True)
+    tierS = models.ManyToManyField('Agent', related_name="agent_tierS", help_text="Enter a tier S agent", blank=True)
+    tierA = models.ManyToManyField('Agent', related_name="agent_tierA",help_text="Enter a tier A agent", blank=True)
+    tierB = models.ManyToManyField('Agent', related_name="agent_tierB",help_text="Enter a tier B agent", blank=True)
+    tierC = models.ManyToManyField('Agent', related_name="agent_tierC",help_text="Enter a tier C agent", blank=True)
+    tierD = models.ManyToManyField('Agent', related_name="agent_tierD",help_text="Enter a tier D agent", blank=True)
 
     def __str__(self):
         return self.name
