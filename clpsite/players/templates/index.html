@@ -1,19 +1,32 @@
 {% extends "base_generic.html" %}
 
 
-{%block title%}<title>Team Clp</title> {% endblock %}
+{%block title%}
+	<title>Team Clp</title>
+{% endblock %}
+
+
 {% block content %}
-<h1>Team CLP</h1>
 
-  <p>Welcome to <em>Team Clp webpage</em></p>
 
-  <h2> Team Info</h2>
 
+<div class="container-fluid text-white text-center">
+	<h1 class="display-1">Team CLP</h1>
+	<p class="h5">Welcome to <em>Team Clp webpage</em></p>
+ 
+	<h2> Team Info</h2>
   <p>The site has some data:</p>
-  <ul>
+  <ul class="display-6">
     <li><strong>Players: </strong> {{ num_players }}</li>
     <li><strong>Maps: </strong>{{num_maps}}</li>
     <li><strong>Agents:  </strong>{{num_agents}}</li>
   </ul>
+</div>
+
+
+
+
+
+
 {% endblock %}
 
