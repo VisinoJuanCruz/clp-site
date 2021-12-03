@@ -1,14 +1,15 @@
 {% extends "base_generic.html"%}
 
 {% block content %}
-        <h1>Maps </h1>
+        <h1 class ="display-4 text-center">Maps </h1>
 
         {% if map_list %}
         <ul class="display-5">
                 {% for map in map_list %}
-                <li>
-			<img> {{map.image}}
-			<a class="text-white" href="{{map.get_absolute_url}}">{{ map.name }}</a>
+                <li>	
+			<a class="text-white" href="{{map.get_absolute_url}}">{{ map.name }}
+			<img src="{{ map.get_url }}" class="thumbnail" width="300" heigth="450" >
+		</a>
                 </li>
                 {% endfor %}
         </ul>

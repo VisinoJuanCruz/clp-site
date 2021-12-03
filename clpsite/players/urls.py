@@ -14,3 +14,6 @@ urlpatterns += [
         url(r'^maps/$', views.MapListView.as_view(), name='maps'),
         url(r'^map/(?P<pk>[0-9A-Za-z-]+)/$', views.MapDetailView.as_view(), name='map-detail'),
         ]
+urlpatterns +=[
+        url('upload_image/',views.upload_image, name='upload_image'),
+        ]

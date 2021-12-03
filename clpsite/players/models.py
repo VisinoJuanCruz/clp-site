@@ -3,6 +3,10 @@ from django.urls import reverse
 import uuid
 
 
+class Image(models.Model):
+    image = models.ImageField(upload_to = 'images')
+    name = models.CharField(max_length=200)
+
 class Country(models.Model):
     id= models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this country')
     name = models.CharField(max_length=200,help_text="Enter a country name")
@@ -68,8 +72,8 @@ class Rank(models.Model):
 class Map(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this map')
     name = models.CharField(max_length=20, help_text="Enter a map name")
-    image = models.ImageField(upload_to = 'players', blank=True)
-    minimapa = models.ImageField(upload_to = 'players', blank=True)
+    image = models.ImageField(upload_to = 'images', blank=True)
+    minimapa = models.ImageField(upload_to = 'images', blank=True)
     tierS = models.ManyToManyField('Agent', related_name="agent_tierS", help_text="Enter a tier S agent", blank=True)
     tierA = models.ManyToManyField('Agent', related_name="agent_tierA",help_text="Enter a tier A agent", blank=True)
     tierB = models.ManyToManyField('Agent', related_name="agent_tierB",help_text="Enter a tier B agent", blank=True)
@@ -81,6 +85,14 @@ class Map(models.Model):
     
     def get_absolute_url(self):
         return reverse('map-detail',args=[str(self.id)])
+    @property
+    def get_url(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
 
 class Rol(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this setup')
