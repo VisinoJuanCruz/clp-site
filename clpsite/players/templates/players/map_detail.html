@@ -2,7 +2,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
-<img src="{{ map.get_minimap_url }}" class="thumbnail" width="240" heigth="360" >
-
+<div class="row ">
+	<div class="col-6 text-center bg-danger">
+		<h3 class="container-fluid h1 display-3 bg-dark text-danger">Description </h3>
+		<li><a href="{{ agent.get_absolute_urldd }}"> {{agent.name}} </a></li>	
+		<p class="text-center display-6">{{ map.description}}</p>
+	</div>
+	<div class="col-6 text-center">
+		<h3 class="h1 display-3 bg-dark text-danger">  Minimapa</h3>
+		<img src="{{ map.get_minimap_url }}" class="image-responsive thumbnail " width="250" heigth="375" >
+	</div>
+</div>
 {% endblock %}

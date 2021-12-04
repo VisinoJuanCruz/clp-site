@@ -83,15 +83,25 @@ class Player(Person):
 class Rank(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this rank')
     name = models.CharField(max_length=20, help_text="Enter a rank name")
+    image = models.ImageField(upload_to = 'images', blank = True)
 
     def __str__(self):
         return self.name
+
+    @property
+    def get_image_url(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
 class Map(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this map')
     name = models.CharField(max_length=20, help_text="Enter a map name")
     image = models.ImageField(upload_to = 'images', blank=True)
     minimapa = models.ImageField(upload_to = 'images', blank=True)
+    description = models.CharField(max_length=6000, help_text="Enter a map description", blank=True)
     tierS = models.ManyToManyField('Agent', related_name="agent_tierS", help_text="Enter a tier S agent", blank=True)
     tierA = models.ManyToManyField('Agent', related_name="agent_tierA",help_text="Enter a tier A agent", blank=True)
     tierB = models.ManyToManyField('Agent', related_name="agent_tierB",help_text="Enter a tier B agent", blank=True)

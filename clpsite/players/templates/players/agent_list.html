@@ -1,8 +1,10 @@
 {% extends "base_generic.html"%}
 
 {% block content %}
-        <h1 class="h1 display-1 text-center">Agentes </h1>
 
+
+
+        <h1 class="h1 display-1 text-center">Agentes </h1>
         {% if agent_list %}
         <ul class="list-group display-6 text-center">
 		<div class="row  text-center">
@@ -10,11 +12,34 @@
                 <li class="list-group-item col-xxl-2 text-center border-4 bg-danger">
 				<a href="{{agent.get_absolute_url}}" class="link-info text-center">
 					<img src="{{ agent.get_icon_url }}" class="mx-auto thumbnail " width="100" heigth="100" > {{ agent.name }}
- </a>
+				</a>
 		</li>
                 {% endfor %}
 		</div>
         </ul>
         {% endif %}
+
+<!--
+
+	<h1 class="h1 display-1 text-center"> Agentes </h1>
+	{% if agent_list %}
+	<div class="card-group">
+	{% for agent in agent_list %}
+		<div class="card col-3">
+			<img class="card-img-top" src="{{agent.get_icon_url}}">
+			<div class=" card-body">
+				<h5 class="card-title">{{agent.name}}</h5>
+				<p class="card-text"> {{agent.rol }} </p>
+			</div>
+
+		</div>
+
+	{% endfor%}
+	</div>
+	{% endif %}
+-->
 {% endblock %}
+
+
+
 
