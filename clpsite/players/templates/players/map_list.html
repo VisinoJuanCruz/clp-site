@@ -1,18 +1,23 @@
 {% extends "base_generic.html"%}
 
 {% block content %}
+<div class="container-fluid">
         <h1 class ="display-4 text-center">Maps </h1>
-
         {% if map_list %}
-        <ul class="display-5">
-                {% for map in map_list %}
-                <li>	
-			<a class="text-white" href="{{map.get_absolute_url}}">{{ map.name }}
-			<img src="{{ map.get_url }}" class="thumbnail" width="300" heigth="450" >
+        <ul class="list-group display-5 ">
+		<div class="row">	
+		{% for map in map_list %}
+		
+                <li class="list-group-item col-4 text-center bg-danger border-0"  >	
+			<a class="text-white" href="{{map.get_absolute_url}}">
+			<img src="{{ map.get_image_url }}" class="thumbnail" width="240" heigth="360" >
 		</a>
                 </li>
+		
                 {% endfor %}
-        </ul>
+		</div>
+	</ul>
         {% endif %} 
+</div>
 {% endblock %}
 

@@ -15,29 +15,20 @@
 
 
 <body class="bg-dark">  
+<h1 class="container-fluid display-1 p-5 bg-light text-center">Team CLP</h1>
 
-	<h1 class="container-fluid display-1 p-5 bg-light text-center">Team CLP</h1>
 
 
-<nav class="navbar navbar-expand-sm bm-0 bg-danger " >
-  <div class="container-fluid ">
-    <ul class="navbar-nav bg-dark">
-      <li class="nav-item">
-	      <a class="nav-link text-white" href="{% url 'index' %}">Index</a>
-      </li>
-      <li class="nav-item">
-	      <a class="nav-link text-white" href="{% url 'players' %}">Players</a>
-	      
-	     
-	      
-      </li>
-      <li class="nav-item">
-	      <a class="nav-link text-white" href="{% url 'agents' %}">Agents</a>
-      </li>
-      <li class="nav-item ">
-	      <a class="nav-link text-white" href="{% url 'maps' %}">Maps</a>
-      </li>
 
+
+	<nav class="navbar navbar-expand-lg  navbar-light bg-secondary border-white border-5 ">
+		<div class="container">
+					<li class="nav-item"><a class="nav-link h1 text-light activate" href="{% url 'index' %}">Index</a></li>
+				        <li class="nav-item"><a class="nav-link  h1 text-light" href="{% url 'players' %}">Players</a></li>
+				        <li class="nav-item"><a class="nav-link h1 text-light" href="{% url 'agents' %}">Agents</a></li>
+				        <li class="nav-item"><a class="nav-link h1 text-light" href="{% url 'maps' %}">Maps</a></li>
+					</div>
+	</nav>
 <!--
 	{% if user.is_authenticated %}
 		<li class="nav-item bg-success text-center"> {{ user.get_username }}</li>
@@ -49,15 +40,7 @@
 			<a href="{% url 'login'%}?next={{request.path}}">Login</a>
 		</li>
  
-	{% endif %} 
--->
-
-    </ul>
-  </div>
-</nav>
-
-
-<!--
+	{% endif %}
 
 
 
@@ -85,7 +68,6 @@
      {% endblock %}
       </div>
 -->
-      <div>
 
 	<div class="col-sm-3">
         </div>

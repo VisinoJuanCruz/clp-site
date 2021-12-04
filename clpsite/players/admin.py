@@ -15,7 +15,7 @@ class Player(admin.ModelAdmin):
 
     fieldsets =(
             ('Personal Data',{
-                'fields':('fullname','birthday','country')
+                'fields':('fullname','birthday','country','description','image')
                 }),
             ('Player Data',{
                 'fields':('nick','played_hours','rank','agents')

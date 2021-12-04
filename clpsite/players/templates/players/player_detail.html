@@ -2,42 +2,73 @@
 
 {% block content %}
 
-<h1>{{ player.nick }}</h1>
+<h1 class="display-4 text-center h1 bg-dark text-light">{{ player.nick }}</h1>
 
-<p><strong> Nombre Completo:  </strong> {{player.fullname }}</p>
-<p><strong> Nacionalidad:  </strong>{{ player.country }}</p>
-<p><strong> Nacimiento:  </strong>{{ player.birthday }}</p>
-<p><strong> Horas jugadas:  </strong>{{ player.played_hours }}</p>
-<p><strong> Rank:  </strong>{{ player.rank }}</p>
 
-<p><strong> Pool de agentes: </strong></p>
-	<ul>	
+
+<div class="container-fluid">
+	<div class=" row display-6 text-center">
+		<div class="colum-6">
+			<p><strong> Nombre Completo:  </strong> {{player.fullname }}</p>
+			<p><strong> Nacionalidad:  </strong>{{ player.country }}</p>
+			<p><strong> Nacimiento:  </strong>{{ player.birthday }}</p>
+			<p><strong> Horas jugadas:  </strong>{{ player.played_hours }}</p>
+			<p><strong> Rank:  </strong>{{ player.rank }}</p>
+		</div>
+		<div class="colum-2 ">
+			<img src="{{ player.get_image_url }}" class="mx-auto thumbnail align-center" width="200" heigth="200" >
+		</div>
+	</div>
+</div>
+
+<h4 class="display-2 h4 text-center bg-dark text-danger">Historia</h4>
+<div class="display-3 p-10 bg-danger text-dark"> 
+	<p class="m-10"><strong>{{player.description}}</p>
+</div>
+<p class="h1 display-1 text-center bg-dark text-danger"><strong> Pool de agentes </strong></p>
+
+
+	<ul class="list-group display-6 text-center">
+		<div class="row  text-center">
+
 	{% for agent in player.agents.all %}
-		<li><a href="{{ agent.get_absolute_url }}"> {{agent.name}} </a></li>	
-	{% endfor %}			
+	<li class="list-group-item col-xxl-2 text-center border-4 bg-danger">
+                                <a href="{{agent.get_absolute_url}}" class="link-info text-center">
+					<img src="{{ agent.get_icon_url }}" class="mx-auto thumbnail " width="100" heigth="100" > {{ agent.name }}</a>
+	{% endfor %}
+		</div>
 	</ul>
 
-{% if not player.sensivility is None %}
-        <p><strong> Sensivility:  </strong>{{player.sensivility}}</p>
-{% endif %}
-{% if not player.dpi is None %}
-        <p><strong> Dpi:  </strong>{{player.dpi}}</p>
-{% endif %}
-{% if not player.monitor is None %}
-        <p><strong> Monitor:  </strong>{{player.monitor}}</p>
-{% endif %}
-{% if not player.mouse is None %}
-        <p><strong> Mouse:  </strong>{{player.mouse}}</p>
-{% endif %}
-{% if not player.mousepad is None %}
-        <p><strong> Mousepad:  </strong>{{player.mousepad}}</p>
-{% endif %}
-{% if not player.keyboard is None %}
-        <p><strong> Keyboard:  </strong>{{player.keyboard}}</p>
-{% endif %}
-{% if not player.headset is None %}
-        <p><strong> Headset:  </strong>{{player.headset}}</p>
-{% endif %}
-{% endblock %}
 
+	<h4 class="display-2 h4 text-center bg-dark text-danger">Settings<h4>
 
+	<div class="row display-5">
+		<div class="colum-6 d-flex m-10">
+			{% if not player.sensivility is None %}
+			        <p><strong> Sensivility:  </strong>{{player.sensivility}}</p>
+			{% endif %}
+			{% if not player.dpi is None %}
+			        <p><strong> Dpi:  </strong>{{player.dpi}}</p>
+			{% endif %}
+			{% if not player.monitor is None %}
+			        <p><strong> Monitor:  </strong>{{player.monitor}}</p>
+			{% endif %}
+			{% if not player.mouse is None %}
+			        <p><strong> Mouse:  </strong>{{player.mouse}}</p>
+			{% endif %}
+		</div>
+		<div class="colum-6 d-inline-flex">
+			{% if not player.mousepad is None %}
+			        <p><strong> Mousepad:  </strong>{{player.mousepad}}</p>
+			{% endif %}
+			{% if not player.keyboard is None %}
+			        <p><strong> Keyboard:  </strong>{{player.keyboard}}</p>
+			{% endif %}
+			{% if not player.headset is None %}
+			        <p><strong> Headset:  </strong>{{player.headset}}</p>
+			{% endif %}
+			{% endblock %}
+
+	
+		</div>
+	</div>
