@@ -23,11 +23,13 @@
 
 	<nav class="navbar navbar-expand-lg  navbar-light bg-secondary border-white border-5 ">
 		<div class="container">
-					<li class="nav-item"><a class="nav-link h1 text-light activate" href="{% url 'index' %}">Index</a></li>
-				        <li class="nav-item"><a class="nav-link  h1 text-light" href="{% url 'players' %}">Players</a></li>
-				        <li class="nav-item"><a class="nav-link h1 text-light" href="{% url 'agents' %}">Agents</a></li>
-				        <li class="nav-item"><a class="nav-link h1 text-light" href="{% url 'maps' %}">Maps</a></li>
-					</div>
+		
+					<div class="nav-item"><a class="nav-link h1 text-light activate" href="{% url 'index' %}">Index</a></div>
+				        <div class="nav-item"><a class="nav-link  h1 text-light" href="{% url 'players' %}">Players</a></div>
+				        <div class="nav-item"><a class="nav-link h1 text-light" href="{% url 'agents' %}">Agents</a></div>
+				        <div class="nav-item"><a class="nav-link h1 text-light" href="{% url 'maps' %}">Maps</a></div>
+				</div>
+		
 	</nav>
 <!--
 	{% if user.is_authenticated %}
@@ -55,23 +57,25 @@
 	  <li><a href="{% url 'agents' %}">Agents</a></li>
 	  <li><a href="{% url 'maps' %}">Maps</a></li>
 
+	   {% if user.is_authenticated %}
+	        <li>User: {{ user.get_username }}</li>
+     		<li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+   	   {% else %}
+     		<li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+   	   {% endif %} 
 
-   {% if user.is_authenticated %}
-     <li>User: {{ user.get_username }}</li>
-     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-   {% else %}
-     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-   {% endif %} 
+  	</ul>
 
-  </ul>
       </ul>
+
      {% endblock %}
-      </div>
 -->
+     </div>
+
 
 	<div class="col-sm-3">
         </div>
-		<div class="col-sm-6 bg-danger">
+		<div class="col-sm-6 bg-danger pt-4">
  
 
       			{% block content %}{% endblock %}

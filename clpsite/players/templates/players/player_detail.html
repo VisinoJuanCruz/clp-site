@@ -1,49 +1,96 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<div class="d-flex justify-content-center bg-dark text-white mb-1">
+<h1 class="display-1 h1 border-bottom mb-5">{{player.nick}}</h1>
 
-<h1 class="display-4 text-center h1 bg-dark text-light">{{ player.nick }}</h1>
+</div>
+
+<!-- Info de la Persona -->
 
 
+<div class="d-inline mb-5 bg-dark text-light mb-5 ">
+<div class="d-flex bg-dark mb-4 ">
 
-<div class="container-fluid">
-	<div class=" row display-6 text-center">
-		<div class="colum-6">
+		<!-- Datos de la persona -->
+		<div class="col-6 display-5 border-dark border text-center ">
 			<p><strong> Nombre Completo:  </strong> {{player.fullname }}</p>
 			<p><strong> Nacionalidad:  </strong>{{ player.country }}</p>
 			<p><strong> Nacimiento:  </strong>{{ player.birthday }}</p>
 			<p><strong> Horas jugadas:  </strong>{{ player.played_hours }}</p>
 			<p><strong> Rank:  </strong>{{ player.rank }}</p>
 		</div>
-		<div class="colum-2 ">
+
+<!-- Fin Datos de la persona -->
+<!-- Foto de perfil -->
+
+
+		<div class="col-6 d-flex border border-dark ">
 			<img src="{{ player.get_image_url }}" class="mx-auto thumbnail align-center" width="200" heigth="200" >
 		</div>
+
+</div>
+<!-- Fin Foto de perfil -->
+
+
+
+
+
+
+
+<!-- Fin Info de la Persona-->
+<!--  Historia del Player -->
+
+<div class="d-flex justify-content-center bg-dark text-white mb-1">
+<h1 class="display-1 h1 border-bottom mb-5">Historia</h1>
+
+</div>
+
+
+<div class="bg-dark mb-4">
+	<div class="display-6 p-5  bg-dark text-light"> 
+		<p class=""><strong>{{player.description}}.</strong></p>
 	</div>
+
 </div>
 
-<h4 class="display-2 h4 text-center bg-dark text-danger">Historia</h4>
-<div class="display-3 p-10 bg-danger text-dark"> 
-	<p class="m-10"><strong>{{player.description}}</p>
+<!-- Fin Historia del Player -->
+<!--  Pool de agentes  -->
+
+
+
+<div class="d-flex justify-content-center bg-dark text-white mb-1">
+<h1 class="display-1 h1 border-bottom mb-5">Pool de agentes</h1>
+
 </div>
-<p class="h1 display-1 text-center bg-dark text-danger"><strong> Pool de agentes </strong></p>
 
-
-	<ul class="list-group display-6 text-center">
-		<div class="row  text-center">
-
+<div class="bg-dark mb-4 p-3">
+<div class="d-flex justify-content-around mb-4">
 	{% for agent in player.agents.all %}
-	<li class="list-group-item col-xxl-2 text-center border-4 bg-danger">
-                                <a href="{{agent.get_absolute_url}}" class="link-info text-center">
-					<img src="{{ agent.get_icon_url }}" class="mx-auto thumbnail " width="100" heigth="100" > {{ agent.name }}</a>
+
+                                <a href="{{agent.get_absolute_url}}" class="link-info display-3 justify-content-around text-danger">
+					<img src="{{ agent.get_icon_url }}" class="mx-auto thumbnail" width="100" heigth="100" > {{ agent.name }}</a>
 	{% endfor %}
 		</div>
-	</ul>
+
+</div>
+</div>
 
 
-	<h4 class="display-2 h4 text-center bg-dark text-danger">Settings<h4>
 
-	<div class="row display-5">
-		<div class="colum-6 d-flex m-10">
+
+<!-- Fin Pool de agentes -->
+
+
+<!-- Settings -->
+
+<div class="d-flex justify-content-center bg-dark text-white mb-2">
+	<h1 class="display-1 h1 border-bottom mb-5">Settings</h1>
+</div>
+
+<div class="d-inline display-6 justify-content-center text-center text-white mb-4">
+	<div class="mb-5">
+		<div class="border border-light bg-dark">
 			{% if not player.sensivility is None %}
 			        <p><strong> Sensivility:  </strong>{{player.sensivility}}</p>
 			{% endif %}
@@ -57,7 +104,7 @@
 			        <p><strong> Mouse:  </strong>{{player.mouse}}</p>
 			{% endif %}
 		</div>
-		<div class="colum-6 d-inline-flex">
+		<div class="border border-light bg-dark">
 			{% if not player.mousepad is None %}
 			        <p><strong> Mousepad:  </strong>{{player.mousepad}}</p>
 			{% endif %}
@@ -72,3 +119,5 @@
 	
 		</div>
 	</div>
+</div>
+
