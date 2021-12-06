@@ -2,15 +2,69 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<div class="row ">
-	<div class="col-6 text-center bg-danger">
-		<h3 class="container-fluid h1 display-3 bg-dark text-danger">Description </h3>
-		<li><a href="{{ agent.get_absolute_urldd }}"> {{agent.name}} </a></li>	
-		<p class="text-center display-6">{{ map.description}}</p>
-	</div>
-	<div class="col-6 text-center">
-		<h3 class="h1 display-3 bg-dark text-danger">  Minimapa</h3>
-		<img src="{{ map.get_minimap_url }}" class="image-responsive thumbnail " width="250" heigth="375" >
-	</div>
+
+<div class="d-flex justify-content-center bg-dark text-white mb-1">
+<h1 class="display-1 h1 border-bottom mb-5">{{map.name}}</h1>
+
 </div>
+
+<!-- Info de la Persona -->
+
+
+<div class="d-inline mb-5 bg-dark text-light mb-5 ">
+<div class="d-flex bg-dark mb-4 ">
+
+                <!-- Datos de la persona -->
+                <div class="col-6 display-5 border-dark border text-center ">
+               		<p>{{map.description}}</p>
+		</div>
+
+<!-- Fin Datos de la persona -->
+<!-- Foto de perfil -->
+
+
+                <div class="col-6 d-flex border border-dark ">
+                        <img src="{{ map.get_minimap_url }}" class="img-fluid thumbnail" width="400" height="200" >
+                </div>
+
+</div>
+<!-- Fin Foto de perfil -->
+
+
+
+
+
+
+
+<!-- Fin Info de la Persona-->
+<!--  Historia del Player -->
+
+<div class="d-flex justify-content-center bg-dark text-white mb-1">
+<h1 class="display-1 h1 border-bottom mb-5">Tier S</h1>
+
+</div>
+<div class="bg-dark mb-4 p-3">
+<div class="d-flex justify-content-around mb-4">
+          {% for agent in map.tierS.all %}
+                                  
+                                  <a href="{{agent.get_absolute_url}}" class="link-info display-3 justify-content-around text-danger">
+                                          <img src="{{ agent.get_icon_url }}" class="mx-auto thumbnail" width="100" heigth="100" > {{ agent.name }}</a>
+          {% endfor %}
+              </div>
+</div>
+
+
+
+<!-- Fin Historia del Player -->
+<!--  Pool de agentes  -->
+
+
+
+
+
+
+
+
+
 {% endblock %}
+
