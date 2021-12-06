@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Person, Country, Player, Rank, Agent, Rol, Map
+from .models import Person, Country, Player, Rank, Agent, Rol, Map,Tier
 
 admin.site.register(Person)
 admin.site.register(Country)
@@ -8,6 +8,7 @@ admin.site.register(Rank)
 admin.site.register(Agent)
 admin.site.register(Rol)
 admin.site.register(Map)
+admin.site.register(Tier)
 
 @admin.register(Player)
 class Player(admin.ModelAdmin):

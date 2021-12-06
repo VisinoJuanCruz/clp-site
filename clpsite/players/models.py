@@ -102,11 +102,7 @@ class Map(models.Model):
     image = models.ImageField(upload_to = 'images', blank=True)
     minimapa = models.ImageField(upload_to = 'images', blank=True)
     description = models.CharField(max_length=6000, help_text="Enter a map description", blank=True)
-    tierS = models.ManyToManyField('Agent', related_name="agent_tierS", help_text="Enter a tier S agent", blank=True)
-    tierA = models.ManyToManyField('Agent', related_name="agent_tierA",help_text="Enter a tier A agent", blank=True)
-    tierB = models.ManyToManyField('Agent', related_name="agent_tierB",help_text="Enter a tier B agent", blank=True)
-    tierC = models.ManyToManyField('Agent', related_name="agent_tierC",help_text="Enter a tier C agent", blank=True)
-    tierD = models.ManyToManyField('Agent', related_name="agent_tierD",help_text="Enter a tier D agent", blank=True)
+    tier_list = models.ManyToManyField('Tier', related_name="tier", help_text="Enter a tier", blank=True)
 
     def __str__(self):
         return self.name
@@ -135,4 +131,15 @@ class Rol(models.Model):
     name = models.CharField(max_length=20,help_text="Enter a rol name")
     def __str__(self):
         return self.name
+
+
+
+class Tier(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this setup')
+    name = models.CharField(max_length=20,help_text="Enter a name tier")
+    agents = models.ManyToManyField('Agent', help_text="Enter a tier agent", blank=True)
+
+    def __str__(self):
+        return self.name
+
 
