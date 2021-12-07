@@ -1,23 +1,35 @@
 {% extends "base_generic.html"%}
 
 {% block content %}
-<div class="container-fluid">
-        <h1 class ="display-4 text-center">Maps </h1>
-        {% if map_list %}
-        <ul class="list-group display-5 ">
-		<div class="row">	
-		{% for map in map_list %}
-		
-                <li class="list-group-item col-4 text-center bg-danger border-0"  >	
-			<a class="text-white" href="{{map.get_absolute_url}}">
-			<img src="{{ map.get_image_url }}" class="thumbnail" width="240" heigth="360" >
-		</a>
-                </li>
-		
-                {% endfor %}
-		</div>
-	</ul>
-        {% endif %} 
+<div class="d-flex justify-content-center bg-dark text-white mb-1">
+	<h1 class="display-1 h1 border-bottom mb-5">Maps</h1>
 </div>
-{% endblock %}
+<!--
+<div class="d-flex bg-warning mb-4 p-3">
 
+        {% for map in map.list %}
+        	<a href="{{map.get_absolute_url}}" class="link-info display-3 justify-content-around text-danger">
+			<img src="{{ map.get_image_url }}" class="mx-auto thumbnail" width="100" heigth="100" > {{ map.name }}</a>
+        {% endfor %}
+
+</div>
+-->
+
+
+
+
+
+
+
+
+        {% if map_list %}
+        <div class="flex-column bg-dark display-6 text-center ">
+                {% for map in map_list %}
+                                <a class="text-decoration-none text-danger" href="{{map.get_absolute_url}}">
+                                        <img src="{{ map.get_image_url }}" class="mx-auto thumbnail" width="400" height="200"> {{ map.name }}
+                                </a>
+                {% endfor %}
+                </div>
+        </div>
+        {% endif %}
+{% endblock %}

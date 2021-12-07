@@ -2,15 +2,18 @@
 
 {% block content %}
 
+<div class="d-flex justify-content-center bg-dark text-white mb-1">
+	<h1 class="display-1 h1 border-bottom mb-5">Agents</h1>
 
+</div>
 
-        <h1 class="h1 display-1 text-center">Agentes </h1>
-        {% if agent_list %}
+<div class="bg-dark">
+	{% if agent_list %}
         <ul class="list-group display-6 text-center">
-		<div class="row  text-center">
+		<div class="row text-center">
                 {% for agent in agent_list %}
-                <li class="list-group-item col-xxl-2 text-center border-4 bg-danger">
-				<a href="{{agent.get_absolute_url}}" class="link-info text-center">
+                <li class="list-group-item col-xxl-2 bg-dark text-center  ">
+				<a href="{{agent.get_absolute_url}}" class="link-info text-center text-decoration-none">
 					<img src="{{ agent.get_icon_url }}" class="mx-auto thumbnail " width="100" heigth="100" > {{ agent.name }}
 				</a>
 		</li>
@@ -18,7 +21,7 @@
 		</div>
         </ul>
         {% endif %}
-
+</div>
 <!--
 
 	<h1 class="h1 display-1 text-center"> Agentes </h1>
