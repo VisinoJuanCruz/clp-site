@@ -25,7 +25,7 @@
         {% if map_list %}
         <div class="flex-column bg-dark display-6 text-center ">
                 {% for map in map_list %}
-                                <a class="text-decoration-none text-danger" href="{{map.get_absolute_url}}">
+                                <a class="text-decoration-none text-danger mt-5" href="{{map.get_absolute_url}}">
                                         <img src="{{ map.get_image_url }}" class="mx-auto thumbnail" width="400" height="200"> {{ map.name }}
                                 </a>
                 {% endfor %}
