@@ -6,43 +6,23 @@
 	<h1 class="display-1 h1 border-bottom mb-5">Agents</h1>
 
 </div>
-<div class="bg-danger">
-<div class="container">
-	{% if agent_list %}
-        <ul class="row justify-content-center">
-                {% for agent in agent_list %}
-		<a href="{{agent.get_absolute_url}}" class=" col-3 display-6 text-white text-center text-decoration-none">
-
-                <li class=" bg-dark text-center border mt-4" style="list-style-type: none">
-			<img src="{{ agent.get_icon_url }}" class="mx-auto bg-light border mt-5" width="100" height="100" > <p class="mb-5">{{ agent.name }}</p>
-				</a>
-		</li>
-                {% endfor %}
-        </ul>
-        {% endif %}
-</div>
-</div>
-<!--
-
-	<h1 class="h1 display-1 text-center"> Agentes </h1>
-	{% if agent_list %}
-	<div class="card-group">
-	{% for agent in agent_list %}
-		<div class="card col-3">
-			<img class="card-img-top" src="{{agent.get_icon_url}}">
-			<div class=" card-body">
-				<h5 class="card-title">{{agent.name}}</h5>
-				<p class="card-text"> {{agent.rol }} </p>
-			</div>
-
-		</div>
-
-	{% endfor%}
-	</div>
-	{% endif %}
--->
-{% endblock %}
 
 
 
 
+ <div class="bg-danger">
+ <div class="container">
+          {% if agent_list %}
+          <ul class="row justify-content-center">
+                 {% for agent in agent_list %}
+                                  <a  class=" col-3 display-6 text-white text-center text-decoration-none mt-3" href="{{agent.get_absolute_url}}">
+ 
+                                  <li class=" bg-dark text-center border " style="list-style-type: none">
+                                          <img src="{{ agent.get_icon_url }}" class="img-fluid mx-auto max-width:100% height:auto border mt-5 mb-5"><p class="container-fluid mt-3 mb-5"    > {{ agent.name }}</p>
+                  </li></a>
+                  {% endfor %}
+          </ul>
+          </div>
+          </div>
+          {% endif %}
+  {% endblock %}

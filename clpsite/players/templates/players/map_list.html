@@ -24,17 +24,25 @@
 <div class="container">
         {% if map_list %}
         <ul class="row justify-content-center">
-
-
-                {% for map in map_list %}
-                                <a  class=" col-6 display-6 text-white text-center text-decoration-none mt-3" href="{{map.get_absolute_url}}">
+               {% for map in map_list %}
+                                <a  class=" col-sm-6 display-6 text-white text-center text-decoration-none mt-3" href="{{map.get_absolute_url}}">
                                         
 				<li class=" bg-dark text-center border " style="list-style-type: none">
 					<img src="{{ map.get_image_url }}" class="img-fluid mx-auto max-width:100% height:auto border mt-5 mb-5"><p class="mt-3 mb-5"> {{ map.name }}</p>
-                               
-				</a>
+		</li></a>
                 {% endfor %}
-                </div>
+	</ul>                
+	</div>
         </div>
         {% endif %}
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
