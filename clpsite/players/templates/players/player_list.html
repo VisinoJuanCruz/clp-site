@@ -12,15 +12,15 @@
 
 <div class="bg-danger">
          {% if player_list %}
-         <ul class="row justify-content-center ">
+         <ul class="row justify-content-around ">
                 {% for player in player_list %}
 
-                                 <a  class=" col-sm-4   text-white text-center text-decoration-none mt-3" style="font-size: calc(1rem + 1vw)"  href="{{player.get_absolute_url}}">
+                                 <a  class=" col-sm-4 text-white text-center text-decoration-none mt-3" style="font-size: calc(1rem + 1vw)"  href="{{player.get_absolute_url}}">
 					        
-                                 <li class=" bg-dark text-center border " style="list-style-type: none">
-					 <p class="px-3 mt-3 mb-5"    > {{ player.nick }}</p>
+					 <li class=" bg-dark text-center border " style="list-style-type: none; height: calcu(12rem + 1vw) ">
+					 <p class="px-3 "    > {{ player.nick }}</p>
 
-					 <img src="{{ player.get_image_url }}" class="img-fluid mx-auto max-width:100% height:auto border mt-5 mb-5">
+					 <img src="{{ player.get_image_url }}" class="img-fluid mx-auto max-width:auto height:200px border border-white  mb-5" style="height:5em">
 			
 					 
                  
