@@ -11,18 +11,17 @@
 
 
  <div class="bg-danger">
- <div class="container">
           {% if agent_list %}
           <ul class="row justify-content-center">
                  {% for agent in agent_list %}
-                                  <a  class=" col-3 display-6 text-white text-center text-decoration-none mt-3" href="{{agent.get_absolute_url}}">
+                                  <a  class=" col-sm-4 display-6 text-white text-center text-decoration-none mt-3" style="font-size: calc(1rem + 1vw)" href="{{agent.get_absolute_url}}">
  
-                                  <li class=" bg-dark text-center border " style="list-style-type: none">
-                                          <img src="{{ agent.get_icon_url }}" class="img-fluid mx-auto max-width:100% height:auto border mt-5 mb-5"><p class="container-fluid mt-3 mb-5"    > {{ agent.name }}</p>
+                                  <li class=" bg-dark text-center border " style="list-style-type: none; height: calcu(12rem + 1vw) ">
+					  <p class="px-3 "    > {{agent.name}} </p>
+                                          <img src="{{ agent.get_icon_url }}" class="img-fluid mx-auto max-width:auto height:200px border border-white  mb-5" style="height:5em"> 
                   </li></a>
                   {% endfor %}
           </ul>
-          </div>
-          </div>
           {% endif %}
+ </div>
   {% endblock %}
