@@ -1,0 +1,125 @@
+[33mcommit dcd36b28a11f6204194d2a85f70e15db7a597dd1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Mon Dec 6 15:10:36 2021 -0300
+
+    Añadí Tier a models.py, eliminé los tiers de Maps
+
+[33mcommit 2523441c3b94e0faf26a5ab065c5c0b89e4d2349[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Mon Dec 6 05:20:52 2021 -0300
+
+    Comenzando el detail de map, falta añadir clase TIER al models.py
+
+[33mcommit 4dc2b4d46ac81bed49fba84a1aeb3b2ad17c25e5[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sun Dec 5 17:10:58 2021 -0300
+
+    finalizado el template de player_detail
+
+[33mcommit 5c420aa02cda33ec4304b947beb86b6d02f825ea[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Dec 4 05:09:02 2021 -0300
+
+    Agregué descripcion a los mapas, le falta pulir el Front
+
+[33mcommit 3d6fb85aee29718da25505487264c221945d5e27[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Dec 4 01:58:25 2021 -0300
+
+    Agregué descripciones y fotos a los modelos
+
+[33mcommit 94b08c94547c8492ae8de409ad1f91f14b9be9e2[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Fri Dec 3 05:13:12 2021 -0300
+
+    Ya se pueden ver las fotos de los mapas
+
+[33mcommit bc6372c4b7726a5db1f6bad884540e5aa20f6b86[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Thu Dec 2 04:40:48 2021 -0300
+
+    Agregué para subir fotos a los Mapas,y minimapas, todavia no se pueden usar
+
+[33mcommit f9fd745783818873acbe40b89ce7fae97e4a6c08[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Thu Dec 2 02:54:08 2021 -0300
+
+    Agregué un poco de estilo con bootstrap5
+
+[33mcommit eef5c00e9034e52f1fc7ee37769175dc24598f82[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Wed Dec 1 21:38:15 2021 -0300
+
+    solucionado el link de los agentes desde los players, agregado el autorefresh del navegador
+
+[33mcommit 040c32515f4af3507a422942a5d88b82926213d8[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Mon Nov 29 01:43:52 2021 -0300
+
+    Falta corregir el url de los agentes desde un player
+
+[33mcommit eb9f637a89dbfadd010ac52b62a69f978653a677[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Nov 27 17:49:02 2021 -0300
+
+    Añadi list y detail para Agentes y Mapas. Falta corregir los links de la lista de agentes que usa un player
+
+[33mcommit de4326fc46625812de5ae5905db1d0cd433b217f[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Nov 27 14:07:27 2021 -0300
+
+    agregué algunos datos al Home
+
+[33mcommit 24dff9b51e1b77b58ead51d18155b72569779f44[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Nov 27 13:54:04 2021 -0300
+
+    Muestro en player_detail los agentes que el player utiliza
+
+[33mcommit 75791965ba4cb29369237fb3bc955ca82185af83[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Nov 27 04:44:35 2021 -0300
+
+    volví a la hardcodeada hasta que sepa como hacer que no devuelva el hash cuando recorro los atributos de Player para hacer el detail
+
+[33mcommit 816a9fa59bf762aa735d5e1d1538c76e14bdd944[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Nov 27 04:40:25 2021 -0300
+
+    Me devuelve los hash en vez de los nombres del valor de los campos
+
+[33mcommit 2e03e588f4f67571d9f56826c8992ccb4dd37fde[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Nov 27 03:51:16 2021 -0300
+
+    hardcodeado el player_detail para que no muestre lo que esté en None
+
+[33mcommit 02706941680bd1f7951b2dfc5121da66ff8643a2[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Nov 27 03:10:23 2021 -0300
+
+    Eliminé Setup y Settings como entidades y las agregué a Player como atributos
+
+[33mcommit 23bed686d48bd944677d66bd0ce2038bee645f76[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Sat Nov 27 02:25:56 2021 -0300
+
+    blank=True en setup y en setting a la hora de crear un player
+
+[33mcommit e950b590ffb3cfabe9d99b049b3e8fe89d91309e[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Fri Nov 26 19:16:47 2021 -0300
+
+    Se puede agregar en player su setting y su setup
+
+[33mcommit 691ae8e5d8004be37d68fdb2b46fdee40d24eef3[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Fri Nov 26 16:54:50 2021 -0300
+
+    agregado a models Agent, Map, Settings, Setup y Rol
+
+[33mcommit 6d5a1ed24da43ee7fca70c41a74e907c088dde5d[m
+Author: visinojuancruz <visinojuancruz@gmail.com>
+Date:   Fri Nov 26 15:38:06 2021 -0300
+
+    Beta for clpsite
