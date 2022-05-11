@@ -26,7 +26,7 @@
 
 
 		<div class="col-6 d-flex border border-dark ">
-			<img src="{{ player.get_image_url }}" class="mx-auto thumbnail align-center" width="200" heigth="200" >
+			<img src="{{ player.get_image_url }}"class="img-fluid mx-auto max-width:auto height:20em border border-white  mb-5"> 
 		</div>
 
 </div>
@@ -60,21 +60,24 @@
 
 
 <div class="d-flex justify-content-center bg-dark text-white mb-1">
-<h1 class="display-1 h1 border-bottom mb-5">Pool de agentes</h1>
+<h1 class="display-1 h1 border-bottom mb-5 text-center">Pool de agentes</h1>
 
 </div>
 
-<div class="bg-dark mb-4 p-3">
-<div class="d-flex justify-content-around mb-4">
+<div class="bg-dark">
+	<ul class="row justify-content-center px-3 py-3">
 	{% for agent in player.agents.all %}
+                                <a  class=" col-sm-4 display-6 text-white text-center text-decoration-none mt-3" style="font-size: calc(1rem + 1vw)" href="{{agent.get_absolute_url}}" >
+					<li class=" bg-dark text-center border " style="list-style-type: none; height: calcu(12rem + 1vw) ">
+						<p class="px-3 "    > {{ agent.name }} </p>
+				<img src="{{ agent.get_icon_url }}" class="img-fluid mx-auto max-width:auto height:200px border border-white  mb-5" style="height:5em"> 
+                  </li></a>
 
-                                <a href="{{agent.get_absolute_url}}" class="link-info display-3 justify-content-around text-danger">
-					<img src="{{ agent.get_icon_url }}" class="mx-auto thumbnail" width="100" heigth="100" > {{ agent.name }}</a>
 	{% endfor %}
-		</div>
+	</ul>
+</div>
 
-</div>
-</div>
+
 
 
 

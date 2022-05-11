@@ -21,20 +21,26 @@
 
 
 <div class="bg-danger">
-<div class="container">
         {% if map_list %}
         <ul class="row justify-content-center">
-
-
-                {% for map in map_list %}
-                                <a  class=" col-6 display-6 text-white text-center text-decoration-none mt-3" href="{{map.get_absolute_url}}">
-                                        
-				<li class=" bg-dark text-center border " style="list-style-type: none">
-					<img src="{{ map.get_image_url }}" class="mx-auto border mt-5 mb-5" width="400" height="200"><p class="mt-3 mb-5"> {{ map.name }}</p>
-                               
-				</a>
+               {% for map in map_list %}
+                                 <a  class=" col-sm-6 display-6 text-white text-center text-decoration-none mt-3" style="font-size: calc(1rem + 1vw)" href="{{map.get_absolute_url}}">
+                                        <li class=" bg-dark text-center border " style="list-style-type: none; height: calcu(12rem + 1vw) ">
+						<p class="px-3 "    > {{map.name}} </p>
+					<img src="{{ map.get_image_url }}"  class="img-fluid mx-auto max-width:auto height:200px border border-white  mb-5" style="height:5em"> 
+		</li></a>
                 {% endfor %}
-                </div>
-        </div>
+	</ul>                
         {% endif %}
+</div>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+

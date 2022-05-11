@@ -6,6 +6,7 @@
 	<h1 class="display-1 h1 border-bottom mb-5">Agents</h1>
 
 </div>
+<<<<<<< HEAD
 <div class="bg-danger">
 <div class="container">
 	{% if agent_list %}
@@ -42,7 +43,24 @@
 	{% endif %}
 -->
 {% endblock %}
+=======
+>>>>>>> 5004f1b2dfb9c9717a0e4b5db6d79c09d677d3b2
 
 
 
 
+ <div class="bg-danger">
+          {% if agent_list %}
+          <ul class="row justify-content-center">
+                 {% for agent in agent_list %}
+                                  <a  class=" col-sm-4 display-6 text-white text-center text-decoration-none mt-3" style="font-size: calc(1rem + 1vw)" href="{{agent.get_absolute_url}}">
+ 
+                                  <li class=" bg-dark text-center border " style="list-style-type: none; height: calcu(12rem + 1vw) ">
+					  <p class="px-3 "    > {{agent.name}} </p>
+                                          <img src="{{ agent.get_icon_url }}" class="img-fluid mx-auto max-width:auto height:200px border border-white  mb-5" style="height:5em"> 
+                  </li></a>
+                  {% endfor %}
+          </ul>
+          {% endif %}
+ </div>
+  {% endblock %}
